@@ -1,0 +1,19 @@
+{
+
+   "autoload": {
+
+       "files":[
+
+	        "src/main_controller.php",
+            "src/model_functions.php"
+       ]
+
+   },
+
+   "require": {
+
+      "twig/twig": "^3.0"
+
+   }
+
+}
