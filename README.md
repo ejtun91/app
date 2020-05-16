@@ -6,5 +6,5 @@ FOR TESTING PURPOSES - PLEASE READ!!!!
 ADMIN CREDENTIALS:
 
 username: Antonio
-email: antonio@gmail.com
+email: antonio@admin.com
 password: antivirus
