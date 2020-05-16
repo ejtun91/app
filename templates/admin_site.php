@@ -54,7 +54,7 @@ require_once __DIR__ . '/_header.php';
                         <tr>
                             <td><?= $product['id'] ?></td>
                             <td><a href="index.php?action=show&id=<?= $product['id'] ?>">
-                                    (show product)</a></td>
+                                    <button type="submit" name="submit" class="btn btn-warning btn-raised">SHOW PRODUCT</button></a></td>
                             <td><?= $product['product_title'] ?></td>
                             <td>
                                 <img src="../images/<?= $product['image'] ?>"/>
@@ -63,11 +63,11 @@ require_once __DIR__ . '/_header.php';
                             <td><?= $product['price'] . "$" ?></td>
                             <td>
                                 <a href="index.php?action=showUpdateProductForm&id=<?= $product['id'] ?>">
-                                    (UPDATE)</a>
+                                    <button type="submit" name="submit" class="btn btn-info btn-raised">UPDATE</button></a>
                             </td>
                             <td>
                                 <a href="index.php?action=delete&id=<?= $product['id'] ?>">
-                                    (DELETE)</a>
+                                    <button type="submit" name="submit" class="btn btn-danger btn-raised">DELETE</button></a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

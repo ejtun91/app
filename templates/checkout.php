@@ -52,20 +52,28 @@ if(count($_SESSION['shoppingCart'])>0){
     //-----------------------------
     ?>
 <?php
-    // echo "<div class='col-md-8'></div>";
-    echo "<div class=\"col-xs-4 pull-right \">";
-    echo "<div class='cart-row'>";
-    if($item_count>1){
-        echo "<h4 class='m-b-10px'>Total ({$item_count} items)</h4>";
-    }else{
-        echo "<h4 class='m-b-10px'>Total ({$item_count} item)</h4>";
+    if(isset($_SESSION['user_session'])) {
+        echo "<div class=\"col-xs-4 pull-right \">";
+        echo "<div class='cart-row'>";
+        if ($item_count > 1) {
+            echo "<h4 class='m-b-10px'>Total ({$item_count} items)</h4>";
+        } else {
+            echo "<h4 class='m-b-10px'>Total ({$item_count} item)</h4>";
+        }
+        echo "<h4>&#36;" . number_format($total, 2, '.', ',') . "</h4>";
+
+        echo "<a href='../templates/place_order.php' class='btn btn-lg btn-success m-b-10px'>";
+        echo "<button class=\"btn btn-primary btn-raised\" type=\"submit\">Place Order</button>";
+        echo "</a>";
+        echo "</div>";
+        echo "</div>";
+    }else {
+        echo "<div class='col-md-12'>";
+        echo "<div class='alert alert-danger'>";
+        echo "PLEASE LOGIN FIRST TO COMPLETE ORDER!";
+        echo "</div>";
+        echo "</div>";
     }
-    echo "<h4>&#36;" . number_format($total, 2, '.', ',') . "</h4>";
-    echo "<a href='../templates/place_order.php' class='btn btn-lg btn-success m-b-10px'>";
-    echo "<button class=\"btn btn-primary btn-raised\" type=\"submit\">Place Order</button>";
-    echo "</a>";
-    echo "</div>";
-    echo "</div>";
 
 }
 else{

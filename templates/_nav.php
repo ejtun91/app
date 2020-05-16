@@ -52,9 +52,6 @@ require_once __DIR__ . '/_header.php';
                     </li>
 
                     <li class="nav-item">
-                        <a href="index.php?action=contact" class="<?= $contactLinkStyle ?> nav-link">Contact Us</a>
-                    </li>
-                    <li class="nav-item">
                         <a href="index.php?action=login" class="<?= $loginLinkStyle ?> nav-link">Login</a>
                     </li>
                     <li class="nav-item">
@@ -65,6 +62,9 @@ require_once __DIR__ . '/_header.php';
                             <a href="index.php?action=admin" class="<? /*= $adminLinkStyle */ ?> nav-link">Admin</a>
                         </li>
                     <?php } ?>
+                    <li class="nav-item">
+                        <a href="index.php?action=contact" class="<?= $contactLinkStyle ?> nav-link">Contact</a>
+                    </li>
                 </ul>
                 <div class="container">
                     <ul class="nav navbar-right top-nav">
@@ -100,7 +100,6 @@ require_once __DIR__ . '/_header.php';
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                         <a class="btn btn-success ml-1" href="index.php?action=cart">
                             <i class="fa fa-shopping-cart"></i> Cart
-                            <!--                <span class="badge badge-light">3</span>-->
                         </a>
                     </form>
                 </div>

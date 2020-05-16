@@ -78,9 +78,10 @@ td {
 footer {
     background: #343a40;
     padding: 40px;
+    color: #f8f9fa!important;
 }
 footer a {
-    color: #f8f9fa!important
+    color: #f8f9fa!important;
 }
 
 .center{

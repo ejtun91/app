@@ -112,3 +112,7 @@ if(isset($_POST['register']))
         <br>
 </form>
 </div>
+<div class="container-fluid px-0 fixed-bottom">
+    <?php
+    require_once __DIR__ . '/_footer.php'; ?>
+</div>

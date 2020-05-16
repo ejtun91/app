@@ -76,7 +76,6 @@ if (isset($_POST['admin_submit'])) {
 
 
 ?>
-<div class="center">
     <!--------------------------------------the else part of the program that is HTML---------->
 <?php if (isset($_SESSION['user_role'])) { ?>
     <div class="container pt-5">
@@ -94,12 +93,14 @@ if (isset($_POST['admin_submit'])) {
         </a>
     </div>
 <?php } else { ?>
-
+    <div id="error">
     <div class="container pt-5 foot">
+        <div class="row align-items-start">
+            <div class="col">
         <form method="post" id="login-form" align="center">
             <h2>Login Page</h2>
             <!-------Format the error in css------->
-            <div id="error">
+
                 <?php
                 if (isset($error)) {
                     ?>
@@ -130,8 +131,9 @@ if (isset($_POST['admin_submit'])) {
                 <label>Don't have account yet! <a href="index.php?action=register">Sign Up</a></label><br><br>
         </form>
 
-
+            </div>
         <br>
+            <div class="col pt-3">
         <p>
             <button type="button" class="btn btn-primary btn-raised" data-toggle="collapse" data-target="#admin">Admin
                 User
@@ -156,7 +158,12 @@ if (isset($_POST['admin_submit'])) {
                 <button type="submit" name="admin_submit" class="btn btn-primary btn-raised">Admin Login</button>
             </form>
         </div>
-
+            </div>
+    </div>
+    </div>
     </div>
 <?php } ?>
+<div class="container-fluid px-0 fixed-bottom">
+    <?php
+    require_once __DIR__ . '/_footer.php'; ?>
 </div>
