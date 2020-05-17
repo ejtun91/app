@@ -18,7 +18,7 @@ td {
 
 .carousel-inner>.carousel-item>img, .carousel-inner>.carousel-item>a>img {
     max-width: 100%;
-    width: 100%; // Add this
+    width: 100%;
 }
 
 
@@ -75,7 +75,7 @@ td {
     text-overflow: ellipsis;
 }
 
-/********* SECTION - CONTACT **********/
+/********* SECTION - FOOTER **********/
 
 footer {
     background: #343a40;

@@ -16,7 +16,7 @@ require_once __DIR__ . '/_header.php';
     <div class="col-md-6">
         <img alt="about-us-page" src="../images/aboutus.png" />
     </div>
-    <div class="col-md-5 columns card">
+    <div class="col-md-5 columns card" style="padding: 20px; border-radius: 10px">
         <p class="card-text">While learning how to build a PC may be intimidating, especially if you’re doing it for the first time, it’s not impossible to do. As long as you carefully choose the right PC components and put everything in the right slots and connectors, you should be able to do it swimmingly with or without experience. In fact, with Intel launching its Comet Lake-S line of desktop processors, and Asus and MSI unveiling their new Intel Z490 motherboards, it’s an exciting time to be building your own PC.</p>
         <p class="card-text">Don’t worry if you don’t know where to shart. We’re here to guide you through the process. We’ve been building computers for years, so we can share our expertise and teach you how to build a PC. We’ll walk you through putting all of those expensive components together, step by step. And, before long, you’ll be the proud owner of one of the best PCs, one that you've built with your own hands.</p>
         <p class="card-text">PCBuildGuide will tell you about the coolest new stuff. We'll work hard to bring you original quotes and exclusive access. We'll review it thoroughly and carefully. We'll explain how it works and why you buy it (or not). Then it's up to you. Add your own comments and opinions. Review gear for yourself. </p>
