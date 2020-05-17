@@ -124,7 +124,6 @@ class USER
     {
         $_SESSION['username'] = $uname;
         try {
-         //   $apass_new = password_hash($upass, PASSWORD_DEFAULT);
             $stmt = $this->conn->prepare("SELECT id, admin_username, admin_email, admin_password, user_role FROM admin_users WHERE admin_username=:uname OR admin_email=:umail ");
             $stmt->execute(array(':uname' => $uname, ':umail' => $umail));
             $userRow = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -173,12 +172,12 @@ class USER
 
 /**************************************************ADMIN SITE**********************************/
 
-function delete_product_action()
+function delete_product_action() // delete product function
 {
     $connection = connect_to_db();
 
     $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
-    $success = delete_product($connection, $id);
+    $success = delete_product($connection, $id); //calling delete_product function
 
     if($success){
         $message = 'SUCCESS - product with id = ' . $id . ' was deleted';
@@ -186,7 +185,7 @@ function delete_product_action()
         $message = 'sorry, product with id = ' . $id . ' could not be deleted';
     }
 
-    require_once __DIR__ . '/../templates/message.php';
+    require_once __DIR__ . '/../templates/message.php'; // page is getting displayed after function is called
 
 
 }
@@ -219,7 +218,6 @@ function update_product_action()
     $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
     $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
     $price = filter_input(INPUT_POST, 'price', FILTER_SANITIZE_NUMBER_FLOAT);
-    $image = filter_input(INPUT_POST, 'image', FILTER_SANITIZE_NUMBER_INT);
 
     $success = update_product($connection, $id, $description, $price);
 
@@ -299,11 +297,10 @@ function create_product_action()
 
     $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
     $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
-    $product_category_id = filter_input(INPUT_POST, 'price', FILTER_SANITIZE_NUMBER_FLOAT);
+    $product_category_id = filter_input(INPUT_POST, 'category', FILTER_SANITIZE_NUMBER_FLOAT);
     $price = filter_input(INPUT_POST, 'price', FILTER_SANITIZE_NUMBER_FLOAT);
- //   $image = filter_input(INPUT_POST, 'image', FILTER_SANITIZE_NUMBER_INT);
-    $stock = filter_input(INPUT_POST, 'price', FILTER_SANITIZE_NUMBER_INT);
-    $restock = filter_input(INPUT_POST, 'price', FILTER_SANITIZE_NUMBER_INT);
+    $stock = filter_input(INPUT_POST, 'stock', FILTER_SANITIZE_NUMBER_INT);
+    $restock = filter_input(INPUT_POST, 'restock', FILTER_SANITIZE_NUMBER_INT);
 
     $success = create_product($connection,$title, $product_category_id, $description, $price, $product_image, $stock, $restock);
 
@@ -428,7 +425,6 @@ function checkout(){
 
     $connection = connect_to_db();
     $shoppingCart = getShoppingCart();
-
     $product = get_all_products($connection);
 
     require_once __DIR__. '/../templates/checkout.php';

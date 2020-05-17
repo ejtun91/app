@@ -12,11 +12,10 @@ require_once __DIR__ . '/_header.php';
     <div class="row">
 
         <div class="col-lg-3">
-            <h1 class="my-4">PCBuild.com</h1>
+            <h1 class="my-4">PCBuildGuide</h1>
             <div class="list-group">
-                <a href="#" class="list-group-item active">Category 1</a>
-                <a href="#" class="list-group-item">Category 2</a>
-                <a href="#" class="list-group-item">Category 3</a>
+                <a href="index.php?action=addToCart&id=<?= $product['id'] ?>"><button type="submit" name="cart" class="btn btn-primary btn-raised btn-block"><i class="fa fa-shopping-cart"></i> ADD TO CART
+                    </button></a>
             </div>
         </div>
         <!-- /.col-lg-3 -->
@@ -26,7 +25,7 @@ require_once __DIR__ . '/_header.php';
             <div class="card mt-4">
                 <img src="../images/<?= $product['image'] ?>"/>
                 <div class="card-body">
-                    <h3 class="card-title">Product Name</h3>
+                    <h3 class="card-title"><?= $product['product_title'] ?></h3>
                     <h4><?= $product['price'] . "$" ?></h4>
                     <p class="card-text"><?= $product['description'] ?></p>
                     <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
@@ -40,14 +39,8 @@ require_once __DIR__ . '/_header.php';
                     Product Reviews
                 </div>
                 <div class="card-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-                    <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-                    <hr>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-                    <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-                    <hr>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-                    <small class="text-muted">Posted by Anonymous on 3/1/17</small>
+                    <p></p>
+                    <small class="text-muted"></small>
                     <hr>
                     <a href="#" class="btn btn-success">Leave a Review</a>
                 </div>

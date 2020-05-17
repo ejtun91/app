@@ -1,21 +1,9 @@
 <?php
-//we will be using sessions
-if(!isset($_SESSION)){
-    session_start();
-}
 
-$pageTitle = 'login page';
-
-$indexLinkStyle = '';
-$aboutLinkStyle = '';
-$listLinkStyle = '';
-$contactLinkStyle = '';
-$sitemapLinkStyle = '';
-$loginLinkStyle = '';
+$pageTitle = 'REGISTER';
 $registerLinkStyle = 'current_page';
 
 require_once __DIR__ . '/_header.php';
-
 require_once __DIR__ . '/../model/dbconfig.php';
 
 //create a new instance of the user (remember the functions below are in that class file)
@@ -77,9 +65,8 @@ if(isset($_POST['register']))
 
 ?>
 <!--------------------------------------the else part of the program that is HTML---------->
-
-<div class="container pt-5">
-<form method="post" id="login-form" align ="center">
+<div class="container contact-form" style="margin-top: 10%">
+<form method="post" id="login-form" align="center">
     <h2>Registration Page</h2>
     <!-------Format the error in css------->
     <div id="error">
@@ -112,7 +99,7 @@ if(isset($_POST['register']))
         <br>
 </form>
 </div>
-<div class="container-fluid px-0 fixed-bottom">
-    <?php
-    require_once __DIR__ . '/_footer.php'; ?>
+</div>
+<div class="container-fluid px-0">
+<?php require_once '_footer.php' ?>
 </div>

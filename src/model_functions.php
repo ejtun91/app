@@ -45,11 +45,9 @@ function get_one_product($id)
 {
     $connection = connect_to_db();
 
+    // SQL query
     $sql = "SELECT * FROM products WHERE id=$id";
     $statement = $connection->query($sql);
-
-   // $statement->execute();
-
 
     if ($row = $statement->fetch()) {
         return $row;
@@ -63,7 +61,7 @@ function get_one_product($id)
 function get_one_user($id)
 {
     $connection = connect_to_db();
-    $sql = "SELECT * FROM users WHERE id=$id";
+    $sql = "SELECT * FROM users WHERE id=$id"; // SQL query
     $statement = $connection->query($sql);
 
     if ($row = $statement->fetch()) {
@@ -77,7 +75,7 @@ function get_one_user($id)
 
 function delete_product($connection, $id)
 {
-    $sql = "DELETE FROM products WHERE id=$id";
+    $sql = "DELETE FROM products WHERE id=$id"; // SQL query
 
     $numRowsAffected = $connection->exec($sql);
 
@@ -92,12 +90,9 @@ function delete_product($connection, $id)
 
 function update_product($connection, $id, $description, $price)
 {
-    $sql = "UPDATE products SET description = '$description', price = $price WHERE id=$id";
+    $sql = "UPDATE products SET description = '$description', price = $price WHERE id=$id"; // SQL query
 
     $numRowsAffected = $connection->exec($sql);
-
-    // can set Boolean variable in a single statement
-    // 	$queryWasSuccessful = ($numRowsAffected > 0);
 
     if($numRowsAffected > 0){
         $queryWasSuccessful = true;
@@ -112,7 +107,7 @@ function update_product($connection, $id, $description, $price)
 
 function change_password($connection, $id, $username, $password, $email){
 
-    $sql = "UPDATE users SET username = '$username', password = '$password', email = '$email' WHERE id=$id";
+    $sql = "UPDATE users SET username = '$username', password = '$password', email = '$email' WHERE id=$id"; // SQL query
 
     $result = $connection->exec($sql);
 
@@ -121,9 +116,6 @@ function change_password($connection, $id, $username, $password, $email){
     } else {
         $result = false;
     }
-
-
-
     return $result;
 
 }

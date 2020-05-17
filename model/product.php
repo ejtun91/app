@@ -4,17 +4,16 @@ require_once __DIR__ . '/../src/model_functions.php';
 class Product{
 
     // database connection and table name
-    private $conn;
+    private $connection;
 
     // object properties
     public $id;
-    public $name;
     public $price;
 
 
     // constructor
     public function __construct($db){
-        $this->conn = $db;
+        $this->connection = $db;
     }
 
     function readByIds($ids){
@@ -25,7 +24,7 @@ class Product{
         $query = "SELECT id, product_title, price FROM products WHERE id IN ({$ids_arr}) ORDER BY product_title";
 
         // prepare query statement
-        $stmt = $this->conn->prepare($query);
+        $stmt = $this->connection->prepare($query);
 
         // execute query
         $stmt->execute($ids);

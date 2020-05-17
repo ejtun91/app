@@ -9,7 +9,7 @@ class Database
     private $password = "";
 
     public $conn;
-     //funnction to connect to the database
+     //function to connect to the database
     public function dbConnection()
 	{
 

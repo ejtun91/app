@@ -1,17 +1,13 @@
 <?php
-ob_start();
-// start session
-if (!isset($_SESSION)) {
-    session_start();
-}
-$pageTitle = 'cart';
+
+$pageTitle = 'CART';
 require_once __DIR__ . '/_header.php';
 ?>
 <div class="container pt-5">
     <hr>
     <h2>Cart Totals</h2>
 
-    <table class="table class=" table table-striped>
+    <table class="table table table-striped">
         <thead class="thead-dark">
         <tr>
             <th>Product</th>
@@ -24,13 +20,8 @@ require_once __DIR__ . '/_header.php';
         </thead>
         <?php
         //-----------------------------LOOP Throough the items in the cart and display -------//
-
         $total = 0;
-
-
-        $shoppingCart = getShoppingCart();
         foreach ($shoppingCart as $id => $quantity):
-
             $product = get_one_product($id);
             $price = $product['price'];
             $subTotal = $price * $quantity;
@@ -45,7 +36,9 @@ require_once __DIR__ . '/_header.php';
                 <td>&euro; <?= $price ?></td>
                 <td><?= $quantity ?></td>
                 <td><?= $subTotal ?></td>
-                <td><a href="index.php?action=removeFromCart&id=<?= $product['id'] ?>"><button type="submit" name="submit" class="btn btn-danger btn-raised">REMOVE FROM CART</button></a></td>
+                <td><a href="index.php?action=removeFromCart&id=<?= $product['id'] ?>">
+                        <button type="submit" name="submit" class="btn btn-danger btn-raised">REMOVE FROM CART</button>
+                    </a></td>
 
             </tr>
 

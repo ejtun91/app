@@ -1,13 +1,5 @@
 <?php
-ob_start();
-if (!isset($_SESSION)) {
-    session_start();
-}
-
-
 require_once __DIR__ . '/_header.php';
-
-
 ?>
 <!-- Navigation -->
 <div class="fixed-top">
@@ -59,7 +51,7 @@ require_once __DIR__ . '/_header.php';
                     </li>
                     <?php if (isset($_SESSION['user_role'])) { ?>
                         <li class="nav-item">
-                            <a href="index.php?action=admin" class="<? /*= $adminLinkStyle */ ?> nav-link">Admin</a>
+                            <a href="index.php?action=admin" class="<? /*= $adminLinkStyle */ ?> nav-link"><i class="fas fa-users-cog"></i> Admin</a>
                         </li>
                     <?php } ?>
                     <li class="nav-item">
@@ -71,28 +63,32 @@ require_once __DIR__ . '/_header.php';
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>
                                 <?php
-
-                                if (isset($_SESSION['username'])) {
-                                    // Grab user data from the database using the user_id
+                                if (isset($_SESSION['user_session'])) {
+                                    // Grab user data from the database using the user_session
                                     // Let them access the "logged in only" pages
                                     echo $_SESSION['username'];
                                 }
                                 ?>
-
                                 <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-
-                                <li>
-                                    <a href="../templates/logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-                                </li>
-                                <?php if (!isset($_SESSION['user_role'])) { ?>
-                                    <hr>
-                                    <li>
-                                        <a href="index.php?action=showUserAction&id=<?= $_SESSION['user_session'] ?>"><i
-                                                    class="fa fa-fw fa-user"></i>View Profile</a>
+                            <?php if (isset($_SESSION['user_session'])) { ?>  <!--  // if user is logged in do the following -->
+                                <ul class="dropdown-menu">
+                                    <li style="text-align: center;">
+                                        <a href="../templates/logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                                     </li>
-                                <?php } ?>
+                                    <?php if (!isset($_SESSION['user_role'])) { ?> <!--  // if user is not admin do the following -->
+                                        <hr>
+                                        <li style="text-align: center;">
+                                            <a href="index.php?action=showUserAction&id=<?= $_SESSION['user_session'] ?>"><i class="fa fa-fw fa-user"></i>View Profile</a>
+                                        </li>
+                                    <?php } ?>
+                                </ul>
+                            <?php }else { ?>
+                            <ul class="dropdown-menu">
+                                <li style="text-align: center;">
+                                    <a href="index.php?action=login"><i class="fas fa-sign-in-alt"></i> Login</a>
+                                </li>
                             </ul>
+                            <?php } ?>
                         </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0 w-50">

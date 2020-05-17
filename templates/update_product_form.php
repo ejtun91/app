@@ -1,12 +1,12 @@
 <?php
 //-------- page header -------------------
-$pageTitle = 'new product form';
+$pageTitle = 'UPDATE PRODUCT';
 require_once __DIR__ . '/_header.php';
 //----------------------------------------
 ?>
 
 
-<div class="container pt-5">
+<div class="container contact-form" style="margin-top: 10%">
 <h1>Update product</h1>
 
 <form action="index.php?action=updateProduct" method="POST">
@@ -15,7 +15,7 @@ require_once __DIR__ . '/_header.php';
 
     <div class="form-group">
         <label for="description" class="bmd-label-floating">Description</label>
-        <textarea type="text" class="form-control" name="description"><?= $product['description'] ?></textarea>
+        <textarea rows="5" class="form-control" name="description"><?= $product['description'] ?></textarea>
     </div>
 
     <div class="form-group">

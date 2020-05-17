@@ -58,7 +58,6 @@ switch ($action){
     case 'showNewProductForm':
         show_new_product_form_action();
         break;
-//for admin users if you wish or normal users to change their details
     case 'updateProduct':
         update_product_action();
         break;

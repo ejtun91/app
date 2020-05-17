@@ -1,3 +1,9 @@
+<?php
+ob_start();
+if (!isset($_SESSION)) {
+    session_start();
+} ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -21,7 +27,6 @@
     <style>
         @import "../public/css/basic.css";
         @import "../public/css/nav.css";
-        @import "../public/css/footer.css";
     </style>
 </head>
 <body>

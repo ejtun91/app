@@ -10,7 +10,8 @@
             <!-- Grid column -->
             <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                 <h6 class="text-uppercase mb-4 font-weight-bold">PCBUILD GUIDE</h6>
-                <p>PCBuild.com is a web portal designed for PC enthusiasts. Serves to resolve doubts in creation of computer configurations. We also provide you IT related news, guides and PC configurations.</p>
+                <p>PCBuildGuide.com is a web portal designed for PC enthusiasts. Serves to resolve doubts in creation of
+                    computer configurations. We also provide you IT related news, guides and PC configurations.</p>
             </div>
             <!-- Grid column -->
 
@@ -40,7 +41,7 @@
             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
                 <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
                 <p>
-                    <a href="#!">Your Account</a>
+                    <a href="#!">My Account</a>
                 </p>
                 <p>
                     <a href="#!">Become a Customer</a>

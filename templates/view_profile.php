@@ -1,9 +1,9 @@
 <?php
 
-$pageTitle = 'view profile page';
+$pageTitle = 'PROFILE';
 require_once __DIR__ . '/_header.php';
 ?>
-<div class="container pt-5">
+<div class="container contact-form" style="margin-top: 10%">
     <h1>Update Profile</h1>
 
     <form action="index.php?action=updateUser" method="POST">
